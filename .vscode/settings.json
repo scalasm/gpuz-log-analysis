@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": ".venv/datascience_env/bin/python",
+    "python.pythonPath": "venv/datascience_env/bin/python",
     "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.autoSearchPaths": true,
     "python.testing.pytestArgs": [

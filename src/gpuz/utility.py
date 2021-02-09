@@ -77,7 +77,7 @@ def preprocess_gpuz_log_file( input_csv_file: str, output_csv_file: str ) -> Non
 
 ZIP_FILE_EXTENSION=".zip"
 
-def preprocess_gpuz_log_file( input_csv_file: str, output_csv_file: str ) -> None:
+def preprocess_gpuz_log_file_zipped( input_csv_file: str, output_csv_file: str ) -> None:
     is_input_zipped = input_csv_file.endswith( ZIP_FILE_EXTENSION)
     is_output_zipped = output_csv_file.endswith( ZIP_FILE_EXTENSION)
 

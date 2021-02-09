@@ -27,7 +27,7 @@ def test_make_clean_header(test_input: str, expected: str) -> None:
 
 def test_preprocess(tmpdir):
     tmpfile =  p = Path(tmpdir) / "cleaned.csv"
-    utility.preprocess_gpuz_log_file( "test/data/sample.txt", tmpfile )
+    utility.preprocess_gpuz_log_file( "test/data/sample.txt", str(tmpfile) )
 
     with open(tmpfile, "r") as processed:
         with open("test/data/expected_cleaned_sample.csv", "r") as expected:

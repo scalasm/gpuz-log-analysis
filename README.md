@@ -4,10 +4,9 @@ Analyzing GPU-Z logs to troubleshoot my Geforce crashes
 # Create your virtual environment
 
 ```
-mario@Sharkey:~/src/data-science/gpuz-charts$ python -m venv datascience_env
-mario@Sharkey:~/src/data-science/gpuz-charts$ source ./datascience_env/bin/activate
-(datascience_env) mario@Sharkey:~/src/data-science/gpuz-charts$ pip install pandas matplotlib numpy ipykernel
-...
+mario@Sharkey:~/src/data-science/gpuz-charts$ python -m venv venv/datascience_env
+mario@Sharkey:~/src/data-science/gpuz-charts$ source venv/datascience_env/bin/activate
+(datascience_env) mario@Sharkey:~/src/data-science/gpuz-charts$ pipenv install
 ...
 ```
 
