@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Work data dir must not be versioned
+/datasets_work
+
+# We only version zipped datasets, to save space
+datasets/*.txt

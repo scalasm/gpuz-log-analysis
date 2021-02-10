@@ -1,6 +1,11 @@
 import re
 from typing import List
+import logging
 
+# Logging configuration only includes the timestamp in human readable format
+logging.basicConfig(format="%(asctime)s %(message)s",
+    datefmt="%Y-%m-%dT%H:%M:%S%z",
+    level=logging.DEBUG)
 
 def normalize_column_name(original_column_name: str) -> str:
     """Normalize a single column name by replacing whitespaces, special characters like '[' and '('"""
@@ -49,7 +54,7 @@ def normalize_column_names(original_header_line: str) -> str:
 def preprocess_gpuz_log_file( input_csv_file: str, output_csv_file: str ) -> None:
     """Process GPU-Z Log file, removing any non-data rows and normalizing header names"""
 
-    print( f"Processing {input_csv_file} into {output_csv_file} ..." )
+    logging.info( f"Processing {input_csv_file} into {output_csv_file} ..." )
 
     header_line_parsed = False
     with open( input_csv_file, "r" ) as input:
@@ -73,7 +78,7 @@ def preprocess_gpuz_log_file( input_csv_file: str, output_csv_file: str ) -> Non
                     output.write( line )
                     output.write( "\n" )
 
-    print("Done!")
+    logging.info("Done!")
 
 ZIP_FILE_EXTENSION=".zip"
 
