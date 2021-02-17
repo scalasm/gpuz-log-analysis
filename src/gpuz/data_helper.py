@@ -1,4 +1,5 @@
 import logging
+
 from typing import Optional, List, Any
 
 import gpuz.utility as utility
@@ -11,22 +12,19 @@ from pandas.core.frame import DataFrame
 import numpy as np
 import matplotlib as mp
 
-
-# Logging configuration only includes the timestamp in human readable format
-logging.basicConfig(format="%(asctime)s %(message)s",
-    datefmt="%Y-%m-%dT%H:%M:%S%z",
-    level=logging.DEBUG)
+logger: logging.Logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 class DataHelper:
     def __init__(self, root_dir: str) -> None:
         self.root_dir = root_dir
-        logging.info( f"DataHelper working on root dir \"{root_dir}\" with"
+        logger.info( f"DataHelper working on root dir \"{root_dir}\" with"
             f"\n\t - Dataset dir     = {self.data_dir}"
             f"\n\t - Work dataset dir= {self.work_dir}"
          )
 
         if not self.work_dir.exists():
-            logging.debug( f"Work dir {self.work_dir} does not exist: creating it ..." )
+            logger.debug( f"Work dir {self.work_dir} does not exist: creating it ..." )
             self.work_dir.mkdir()
 
     @property

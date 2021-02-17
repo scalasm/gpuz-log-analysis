@@ -2,10 +2,8 @@ import re
 from typing import List
 import logging
 
-# Logging configuration only includes the timestamp in human readable format
-logging.basicConfig(format="%(asctime)s %(message)s",
-    datefmt="%Y-%m-%dT%H:%M:%S%z",
-    level=logging.DEBUG)
+logger: logging.Logger = logging.getLogger(__name__)
+logger.setLevel( logging.DEBUG )
 
 def normalize_column_name(original_column_name: str) -> str:
     """Normalize a single column name by replacing whitespaces, special characters like '[' and '('"""
